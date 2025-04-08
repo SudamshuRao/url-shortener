@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>📊 URL Shortener Dashboard</title>
+</head>
+<body>
+  <h1>🚀 Admin Dashboard</h1>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Short URL</th>
+        <th>Long URL</th>
+        <th>Clicks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% urls.forEach(url => { %>
+        <tr>
+          <td><%= url.id %></td>
+          <td><a href="/r/<%= url.shortCode %>" target="_blank">/r/<%= url.shortCode %></a></td>
+          <td><%= url.longUrl %></td>
+          <td><%= url.clickCount %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>
